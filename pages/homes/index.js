@@ -3,7 +3,7 @@ import React from 'react'
 function index() {
   return (
     <h1>
-      home page
+      all homes page
     </h1>
   )
 }
