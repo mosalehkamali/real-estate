@@ -13,3 +13,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 <h2>Responsive on mobile</h2>
 
 ![](public/preview/mobile.png)
+
+<h2>Single home details</h2>
+
+![](public/preview/single-home.png)
