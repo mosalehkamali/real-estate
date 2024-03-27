@@ -23,3 +23,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 <p>Users can search for the house they want</p>
 
 ![](public/preview/mobile%20(2).gif)
+
+<p>Users can sort houses by size, number of rooms, and price</p>
+
+![](public/preview/sorting.gif)
