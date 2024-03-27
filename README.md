@@ -17,3 +17,9 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 <h2>Single home details</h2>
 
 ![](public/preview/single-home.png)
+
+
+<h2>All houses page</h2>
+<p>Users can search for the house they want</p>
+
+![](public/preview/mobile%20(2).gif)
