@@ -40,6 +40,14 @@ function index() {
       }
   },[homes])
 
+  const paginate= (event , page) => {
+    event.preventDefault()
+    const endIndex = page * 6
+    const startIndex = endIndex - 6
+    const paginated = db.homes.slice(startIndex, endIndex)
+    setHomes(paginated)
+  }
+
   return (
     <div className="home-section" id="houses">
       <div className="home-filter-search">
@@ -60,9 +68,13 @@ function index() {
         { content }
       </div>
       <ul className="pagination__list">
-        <li className="pagination__item"><a href="#" className="">  </a></li>
-        <li className="pagination__item"><a href="#" className="">2</a></li>
-        <li className="pagination__item active"><a href="#" className="">1</a></li>
+        {
+          Array.from({ length: Math.ceil(db.homes.length / 6)}).map((item , index)=> (
+            <li key={index} className="pagination__item" onClick={event=>paginate(event , index+1)}>
+              <a href="#" className="" > {index+1} </a>
+              </li>
+          ))
+        }
       </ul>
     </div>
   )
