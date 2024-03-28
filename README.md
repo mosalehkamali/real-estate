@@ -27,3 +27,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 <p>Users can sort houses by size, number of rooms, and price</p>
 
 ![](public/preview/sorting.gif)
+
+<P>Dynamic pagination of all houses</P>
+
+![](public/preview/pagination.gif)
