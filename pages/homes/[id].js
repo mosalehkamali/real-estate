@@ -9,32 +9,32 @@ function HomeDetails() {
   console.log(homeData)
   return (
    
-    <div class="home-details">
-    <div class="home-details-top">
-        <div class="home-img">
+    <div className="home-details">
+    <div className="home-details-top">
+        <div className="home-img">
             <img src={homeData?.img} alt="" />
         </div>
-        <div class="home-interduce">
-            <div class="home-title">
+        <div className="home-interduce">
+            <div className="home-title">
                 <h1>
                     <span>{homeData?.title}</span>
                     <span>{homeData?.price.toLocaleString("fa-IR")}</span>
                 </h1>
-                <div class="tags">
-                    <span class="tag green-tag">ویژه</span>
-                    <span class="tag brown-tag">برای اجاره</span>
+                <div className="tags">
+                    <span className="tag green-tag">ویژه</span>
+                    <span className="tag brown-tag">برای اجاره</span>
                 </div>
-                <div class="adrress">آدرس : شیراز، میدان ارم</div>
+                <div className="adrress">آدرس : شیراز، میدان ارم</div>
             </div>
-            <div class="home-review">
-                <div class="home-review-top">
+            <div className="home-review">
+                <div className="home-review-top">
                     <h2>مرور کلی</h2>
-                    <p class="">
+                    <p className="">
                         <span>کد ملک : </span>
                         <span>hz-HZ15</span>
                     </p>
                 </div>
-                <ul class="home-review-bottom">
+                <ul className="home-review-bottom">
                     <li>
                         <span>نوع ملک: </span>
                         <span>مغازه</span>
@@ -55,10 +55,10 @@ function HomeDetails() {
             </div>
         </div>
     </div>
-    <div class="home-details-bottom">
-        <div class="home-details-description">
-            <p class="">توضیحات</p>
-            <p class="">
+    <div className="home-details-bottom">
+        <div className="home-details-description">
+            <p className="">توضیحات</p>
+            <p className="">
                 لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از
                 صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها
                 و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که

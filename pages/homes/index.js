@@ -6,6 +6,8 @@ function index() {
   const [search, setSearch] = useState('');
   const [sort, setSort] = useState();
   const [homes, setHomes] = useState(db.homes);
+  const [content, setContent] = useState();
+
 
   useEffect(()=>{
     switch(sort){
@@ -28,14 +30,20 @@ function index() {
   },[sort])
 
   useEffect(() => {
-    const newHomes = db.homes.filter((home) => home.title.includes(search));
-    setHomes(newHomes);
+    setHomes( db.homes.filter((home) => home.title.includes(search)));
   }, [search])
 
+  useEffect(()=>{
+    setContent(homes.slice(0, 6).map((home)=><Home key={home.id} {...home}></Home>) )
+    if( homes && homes.length <1){
+      setContent(<h2 style={{textAlign: "center", color:"#101D2C", fontSize:"48px"}}> متاسفانه خانه مدنظر شما پیدا نشد!!</h2>)
+      }
+  },[homes])
+
   return (
-    <div class="home-section" id="houses">
-      <div class="home-filter-search">
-        <div class="home-filter">
+    <div className="home-section" id="houses">
+      <div className="home-filter-search">
+        <div className="home-filter">
           <select defaultValue={sort} onChange={e => setSort(e.target.value)} >
             <option value="-1"  >انتخاب کنید</option>
             <option value="price">بر اساس قیمت</option>
@@ -43,19 +51,18 @@ function index() {
             <option value="meterage">بر اساس اندازه</option>
           </select>
         </div>
-        <div class="home-search">
-          <input value={search} type="text" onChange={
-            e => { setSearch(e.target.value) }
+        <div className="home-search">
+          <input value={search} type="text" onChange={e => { setSearch(e.target.value)}
           } placeholder="جستجو کنید" />
         </div>
       </div>
-      <div class="homes">
-        { homes.slice(0, 6).map((home)=><Home key={home.id} {...home}></Home>) }
+      <div className="homes">
+        { content }
       </div>
-      <ul class="pagination__list">
-        <li class="pagination__item"><a href="#" class="">  </a></li>
-        <li class="pagination__item"><a href="#" class="">2</a></li>
-        <li class="pagination__item active"><a href="#" class="">1</a></li>
+      <ul className="pagination__list">
+        <li className="pagination__item"><a href="#" className="">  </a></li>
+        <li className="pagination__item"><a href="#" className="">2</a></li>
+        <li className="pagination__item active"><a href="#" className="">1</a></li>
       </ul>
     </div>
   )
